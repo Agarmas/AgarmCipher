@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgarmCipher (Portable)</title>
+    <link rel="icon" type="image/png" href="icon.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="container">
+        <h1>AgarmCipher (Portable)</h1>
+        <div class="show-password">
+            <label for="show-password">Show Text</label>
+            <input type="checkbox" id="show-password">
+        </div>
+        <div class="input-container">
+            <input type="password" id="encryptText" placeholder="Enter text to encrypt">
+        </div>
+        <div class="input-container" id="key-container" style="display: none;">
+            <input type="password" id="key" placeholder="Enter key">
+        </div>
+        <div class="input-container" id="shift-container">
+            <input type="number" id="shift" placeholder="Enter shift value">
+        </div>
+        <div class="input-container">
+            <select id="cipher-method" onchange="updateInputFields()">
+                <option value="caesar" selected>Caesar</option>
+                <option value="vigenere">Vigenere</option>
+                <option value="aes">AES</option>
+            </select>
+        </div>
+        <button onclick="encrypt()">Encrypt & Copy to Clipboard</button>
+        <div id="notification"></div>
+    </div>
+</body>
+</html>
